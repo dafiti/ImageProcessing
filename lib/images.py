@@ -23,6 +23,8 @@
 from wand.image import Image
 from wand.color import Color
 
+from os import makedirs
+
 
 def get_resized_image(image, width=None, height=None):
     """ (str, int, int) -> Image
@@ -54,7 +56,7 @@ def generate_sprite(image_dir, images):
     left_position = 0
     for image in images:
         i = get_resized_image(image=image, width=image_width, height=image_height)
-        if sprite == None:
+        if sprite is None:
             if i.height == i.width:
                 sprite = Image(width=image_width*4, height=image_width, background=Color("#fff"))
             else:
@@ -66,6 +68,7 @@ def generate_sprite(image_dir, images):
     makedirs(image_dir)
     sprite.save(filename=sprite_file)
     sprite.destroy()
+
     return sprite_file
 
 

@@ -19,4 +19,4 @@ We use pytest for unit tests. Simple call pytest on tests' dir: `py.test tests`
 
 ## License
 
-This software is licensed under GPLv3 or newer.
+This software is licensed under LGPLv3 or newer.
