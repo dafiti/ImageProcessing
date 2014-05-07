@@ -1,5 +1,7 @@
 # Dafiti Image Processing Scripts
 
+[![Code Health](https://landscape.io/github/dafiti/ImageProcessing/master/landscape.png)](https://landscape.io/github/dafiti/ImageProcessing/master)
+
 This project is a compilation of scripts that are used to process images.
 
 ## Usage
