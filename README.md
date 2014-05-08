@@ -1,5 +1,6 @@
 # Dafiti Image Processing Scripts
 
+[![Build Status](https://travis-ci.org/dafiti/ImageProcessing.svg?branch=master)](https://travis-ci.org/dafiti/ImageProcessing)
 [![Code Health](https://landscape.io/github/dafiti/ImageProcessing/master/landscape.png)](https://landscape.io/github/dafiti/ImageProcessing/master)
 
 This project is a compilation of scripts that are used to process images.
