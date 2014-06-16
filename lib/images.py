@@ -20,10 +20,11 @@
 # You should have received a copy of the Lesser GNU General Public License
 # along with this program. If not, see http://www.gnu.org/licenses/.
 
+from os import makedirs
+from os.path import isdir
+
 from wand.image import Image
 from wand.color import Color
-
-from os import makedirs
 
 
 def get_resized_image(image, width=None, height=None):
@@ -65,7 +66,10 @@ def generate_sprite(image_dir, images):
         left_position += image_width
         i.destroy()
     sprite_file = "%s/sprite.jpg" % (image_dir)
-    makedirs(image_dir)
+
+    if not isdir(image_dir):
+        makedirs(image_dir)
+
     sprite.save(filename=sprite_file)
     sprite.destroy()
 

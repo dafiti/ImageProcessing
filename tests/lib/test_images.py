@@ -41,6 +41,32 @@ def test_get_resized_image():
     assert 300 == int(resized_image.height)
 
 
+def test_generate_sprite():
+    images = ('tests/fixtures/blackdress.jpg', 'tests/fixtures/blackdress.jpg',
+            'tests/fixtures/blackdress.jpg', 'tests/fixtures/blackdress.jpg')
+    output_dir = '/tmp/dip_sprites_tests'
+
+    try:
+        rmtree(output_dir)
+    except:
+        pass
+
+    os.mkdir(output_dir)
+
+    output_file = generate_sprite(output_dir, images)
+
+    img = Image(filename=output_file)
+
+    assert img.width == 640
+    assert img.height == 232
+    assert img.format == 'JPEG'
+
+    try:
+        rmtree(output_dir)
+    except:
+        pass
+
+
 def test_generate_pjpeg():
     image = 'tests/fixtures/blackdress.jpg' # 1104 x 1600
     output_dir = '/tmp/ibp_tests/'
@@ -62,3 +88,8 @@ def test_generate_pjpeg():
     assert img.height == 620
     assert img.format == 'JPEG'
     assert img.metadata.get('jpeg:colorspace') == '2'
+
+    try:
+        rmtree(output_dir)
+    except:
+        pass
