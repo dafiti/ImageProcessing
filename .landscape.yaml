@@ -1,0 +1,4 @@
+doc-warnings: true
+test-warnings: false
+strictness: high
+
